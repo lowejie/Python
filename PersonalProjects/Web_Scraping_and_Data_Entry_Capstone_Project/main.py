@@ -30,7 +30,7 @@ room_prices = []
 room_addresses = []
 
 # TODO: update selectors after checking the ibilik.my HTML structure
-listings = soup.select("div.home-list-pop")  # example placeholder selector
+listings = soup.select("div.home-list-pop")  
 
 for listing in listings:
     # Link
@@ -41,7 +41,7 @@ for listing in listings:
     room_links.append(link)
 
     # Price
-    price_tag = listing.select_one("div.room_price span")  # adjust selector
+    price_tag = listing.select_one("div.room_price span") 
     raw_price = price_tag.get_text(strip=True) if price_tag else ""
     clean_price = (
         raw_price.replace(",", "")
@@ -69,7 +69,7 @@ for i in range(len(room_links)):
 # PART 2: Automated Data Entry (Selenium)
 # -------------------------------
 
-# Google Form link (replace with your actual one)
+# Google Form link 
 FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScIx-azV9zFWkKyGm_EHE9iGyTRpNebojqzUdjrMkQR4pzx6w/viewform?usp=dialog"
 
 # Configure Selenium WebDriver (Chrome)
