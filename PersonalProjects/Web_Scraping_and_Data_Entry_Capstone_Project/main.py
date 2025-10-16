@@ -29,7 +29,7 @@ room_links = []
 room_prices = []
 room_addresses = []
 
-# TODO: update selectors after checking the ibilik.my HTML structure
+
 listings = soup.select("div.home-list-pop")  
 
 for listing in listings:
@@ -79,7 +79,6 @@ for i in range(len(room_links)):
     driver.get(FORM_URL)
     time.sleep(2)  # wait for form to load
 
-    # TODO: Update XPath/CSS selectors for your form fields
     address_field = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
     price_field = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/input')
     link_field = driver.find_element(By.XPATH, '//*[@id="mG61Hd"]/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input')
